@@ -11,38 +11,38 @@
     <h3>Your tacos in this order:</h3>
     <a th:href="@{/design}" id="another">Design another taco</a><br/>
     <ul>
-        <li th:each="taco : ${tacoOrder.tacos}">
-            <span th:text="${taco.name}" >taco name</span></li>
+        <li th:each="taco : ${tacos}">
+            <span th:text="${name}" >taco name</span></li>
     </ul>
     <h3>Deliver my taco masterpieces to...</h3>
     <label for="deliveryName">Name: </label>
-    <input type="text" id="deliveryName" th:field="*{TacoOrder.deliveryName}"/>
+    <input type="text" id="deliveryName" th:field="*{deliveryName}"/>
     <br/>
 
     <label for="deliveryStreet">Street address: </label>
-    <input type="text" id = "deliveryStreet" th:field="*{TacoOrder.deliveryStreet}"/>
+    <input type="text" id = "deliveryStreet" th:field="*{deliveryStreet}"/>
     <br/>
     <label for="deliveryCity">City: </label>
-    <input type="text" id="deliveryCity" th:field="*{TacoOrder.deliveryCity}"/>
+    <input type="text" id="deliveryCity" th:field="*{deliveryCity}"/>
     <br/>
     <label for="deliveryState">State: </label>
-    <input type="text" id ="deliveryState" th:field="*{TacoOrder.deliveryState}"/>
+    <input type="text" id ="deliveryState" th:field="*{deliveryState}"/>
     <br/>
     <label for="deliveryZip">Zip code: </label>
-    <input type="text" id ="deliveryZip"th:field="*{TacoOrder.deliveryZip}"/>
+    <input type="text" id ="deliveryZip"th:field="*{deliveryZip}"/>
     <br/>
     <h3>Here's how I'll pay...</h3>
     <label for="ccNumber">Credit Card #: </label>
-    <input type="text" id ="ccNumber"th:field="*{TacoOrder.ccNumber}"/>
+    <input type="text" id ="ccNumber"th:field="*{ccNumber}"/>
     <span class="validationError"
           th:if="${#fields.hasErrors('ccNumber')}"
-          th:errors="*{TacoOrder.ccNumber}" style="color: red">CCNum error</span>
+          th:errors="*{ccNumber}" style="color: red">CCNum error</span>
     <br/>
     <label for="ccExpiration">Expiration: </label>
-    <input type="text" id = "ccExpiration" th:field="*{TacoOrder.ccExpiration}"/>
+    <input type="text" id = "ccExpiration" th:field="*{ccExpiration}"/>
     <br/>
     <label for="ccCVV">CVV: </label>
-    <input type="text" id="ccCVV" th:field="*{TacoOrder.ccCVV}"/>
+    <input type="text" id="ccCVV" th:field="*{ccCVV}"/>
     <br/>
     <input type="submit" value="Submit Order"/>
 </form>
